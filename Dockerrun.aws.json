@@ -1,7 +1,7 @@
 {
-  "AWSEBDockerrunVersion": "2",
+  "AWSEBDockerrunVersion": "1",
   "Image": {
-    "Name": "mfigurski80/search_back",
+    "Name": "mfigurski80/srch-back",
     "Update": "true"
   },
   "Ports": [
