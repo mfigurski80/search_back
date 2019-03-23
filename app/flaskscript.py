@@ -1,4 +1,4 @@
-from flask import Flask, redirect
+from flask import Flask, redirect, jsonify
 from flask_cors import CORS
 import json
 from difflib import get_close_matches
@@ -149,8 +149,8 @@ def red():
 
 @app.route("/search/<tag>")
 def result(tag):
-    results = str(fullSearch(tag.replace(","," "))).replace("\"","").replace(">","").replace("<","").replace(";","")
-    return json.dumps(results)
+    results = fullSearch(tag.replace(","," "))
+    return jsonify(results)
 
 
 if __name__ == "__main__":
