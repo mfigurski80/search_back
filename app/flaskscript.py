@@ -34,7 +34,7 @@ def getResultsFor(urls_list):
     for url_tuple in urls_list:
         url = url_tuple[0]
         result_info = urls_dict[url]
-        result_info["url"] = url
+        result_info["url"] = str(url)
         result_info["term_density"] = url_tuple[1]
         results.append(result_info)
     return results
@@ -150,7 +150,7 @@ def red():
 @app.route("/search/<tag>")
 def result(tag):
     results = str(fullSearch(tag.replace(","," "))).replace("\"","").replace(">","").replace("<","").replace(";","")
-    return results
+    return json.dumps(results)
 
 
 if __name__ == "__main__":
